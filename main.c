@@ -6,16 +6,16 @@
 #define MAX_USERS 10
 #define MAX_TRANSACOES 100
 
-// Estrutura para armazenar transações
+// armazen de est
 typedef struct {
     char data[20];
-    char tipoOperacao[10]; // "Compra" ou "Venda"
+    char tipoOperacao[10]; // compra e vneda dos baguio
     char criptomoeda[20];
     float valor;
     float taxa;
 } Transacao;
 
-// Estrutura para armazenar dados do usuário
+// armazen de dados
 typedef struct {
     char cpf[12];
     char senha[20];
@@ -24,7 +24,7 @@ typedef struct {
     float saldoEthereum;
     float saldoRipple;
     Transacao transacoes[MAX_TRANSACOES];
-    int numTransacoes; // Número atual de transações
+    int numTransacoes; // num de trans 
 } Usuario;
 
 // Funções
@@ -151,7 +151,7 @@ int main() {
     return 0;
 }
 
-// Implementação das funções
+// func 
 
 void cadastrarUsuario(Usuario usuarios[], int *totalUsuarios) {
     if (*totalUsuarios >= MAX_USERS) {
@@ -163,7 +163,7 @@ void cadastrarUsuario(Usuario usuarios[], int *totalUsuarios) {
     printf("Digite o CPF: ");
     scanf("%s", novoUsuario.cpf);
 
-    // Verificar se o CPF já existe
+    // cpf exitente
     for (int i = 0; i < *totalUsuarios; i++) {
         if (strcmp(usuarios[i].cpf, novoUsuario.cpf) == 0) {
             printf("Este CPF já está cadastrado!\n");
@@ -174,14 +174,14 @@ void cadastrarUsuario(Usuario usuarios[], int *totalUsuarios) {
     printf("Digite a senha: ");
     scanf("%s", novoUsuario.senha);
 
-    // Inicializa os saldos e transações
+    // inc 
     novoUsuario.saldoReais = 0.0;
     novoUsuario.saldoBitcoin = 0.0;
     novoUsuario.saldoEthereum = 0.0;
     novoUsuario.saldoRipple = 0.0;
     novoUsuario.numTransacoes = 0;
 
-    // Adiciona o novo usuário ao array de usuários
+    // novo aray uss
     usuarios[*totalUsuarios] = novoUsuario;
     (*totalUsuarios)++;
     printf("Cadastro realizado com sucesso!\n");
@@ -191,7 +191,7 @@ int efetuarLogin(Usuario usuarios[], int totalUsuarios, char cpf[], char senha[]
     for (int i = 0; i < totalUsuarios; i++) {
         if (strcmp(usuarios[i].cpf, cpf) == 0 && strcmp(usuarios[i].senha, senha) == 0) {
             printf("Login realizado com sucesso!\n");
-            return i; // Retorna o índice do usuário
+            return i; //retorna usuario la dog
         }
     }
     printf("CPF ou senha inválidos.\n");
@@ -311,10 +311,10 @@ void carregarDados(Usuario usuarios[], int *totalUsuarios) {
 }
 
 void atualizarCotacao(float *cotacaoBitcoin, float *cotacaoEthereum, float *cotacaoRipple) {
-    // Simulação de atualização de cotação (pode ser substituído por uma chamada a uma API)
-    *cotacaoBitcoin += (*cotacaoBitcoin * 0.01); // Aumenta 1%
-    *cotacaoEthereum += (*cotacaoEthereum * 0.01); // Aumenta 1%
-    *cotacaoRipple += (*cotacaoRipple * 0.01); // Aumenta 1%
+    //simulacion aiaia
+    *cotacaoBitcoin += (*cotacaoBitcoin * 0.01); 
+    *cotacaoEthereum += (*cotacaoEthereum * 0.01); 
+    *cotacaoRipple += (*cotacaoRipple * 0.01); 
 }
 
 void salvarExtrato(Usuario usuario) {

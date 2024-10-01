@@ -1,5 +1,4 @@
 # PROJ1
-Aqui está um exemplo de `README.md` para o projeto da Exchange de Criptomoedas:
 
 ```markdown
 # Exchange de Criptomoedas

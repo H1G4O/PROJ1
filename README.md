@@ -45,6 +45,7 @@ Para compilar e executar o projeto, siga as etapas abaixo:
    ```
 
 #Alunos
+```bash
 **Ettore M T Lopes**
   22124032-8
  
@@ -53,3 +54,4 @@ Para compilar e executar o projeto, siga as etapas abaixo:
   
 **Matheus Espindola Silva**
   22124068-2
+```

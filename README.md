@@ -46,12 +46,12 @@ Para compilar e executar o projeto, siga as etapas abaixo:
 
 #Alunos
 ```bash
-**Ettore M T Lopes**
+Ettore M T Lopes
   22124032-8
  
-**Higor Augusto C Aquino**
+Higor Augusto C Aquino
   22124027-8
   
-**Matheus Espindola Silva**
+Matheus Espindola Silva
   22124068-2
 ```

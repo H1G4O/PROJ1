@@ -27,10 +27,7 @@ Para compilar e executar o projeto, siga as etapas abaixo:
 
 ### Instruções
 
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/seu-usuario/exchange-criptomoedas.git
-   cd exchange-criptomoedas
+
    ```
 
 2. **Compile o código**:

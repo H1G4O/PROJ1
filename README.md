@@ -32,12 +32,12 @@ Para compilar e executar o projeto, siga as etapas abaixo:
 
 2. **Compile o código**:
    ```bash
-   gcc -o exchange main.c
+   gcc main.c
    ```
 
 3. **Execute o programa**:
    ```bash
-   ./exchange
+   ./a.exe
    ```
 
 #Alunos

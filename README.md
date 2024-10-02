@@ -40,6 +40,16 @@ Para compilar e executar o projeto, siga as etapas abaixo:
    ./a.exe
    ```
 
+4. **Utilize o Programa**:
+   ```bash
+   Escreva o Número marcado para prosseguir com o cadastro e/ou login
+
+5. **Utilize o Programa**:
+   ```bash
+   Escreva o número indicado para a função desejada
+   ```   ```
+   
+
 #Alunos
 ```bash
 Ettore M T Lopes

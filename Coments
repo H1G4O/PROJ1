@@ -1,0 +1,64 @@
+// Função para salvar o extrato do usuário em um arquivo de texto.
+// Recebe um usuário como parâmetro e salva suas transações, saldos em moedas, e CPF no arquivo "extrato.txt".
+void salvarExtrato(Usuario usuario) {
+    FILE *file = fopen("extrato.txt", "a");  // Abre o arquivo em modo de adição (append).
+    fprintf(file, "Extrato do usuário %s:\n", usuario.cpf);  // Escreve o CPF do usuário no arquivo.
+    
+    // Percorre o array de transações do usuário e escreve cada uma no arquivo.
+    for (int i = 0; i < usuario.numTransacoes; i++) {
+        fprintf(file, "%s - %s: %.2f (Taxa: %.2f)\n",
+                usuario.transacoes[i].data,               // Data da transação.
+                usuario.transacoes[i].tipoOperacao,       // Tipo da operação (ex: depósito, saque).
+                usuario.transacoes[i].valor,              // Valor da transação.
+                usuario.transacoes[i].taxa);              // Taxa cobrada na transação.
+    }
+
+    // Escreve os saldos do usuário em diferentes moedas no arquivo.
+    fprintf(file, "Saldo em Reais: %.2f\n", usuario.saldoReais);
+    fprintf(file, "Saldo em Bitcoin: %.6f\n", usuario.saldoBitcoin);
+    fprintf(file, "Saldo em Ethereum: %.6f\n", usuario.saldoEthereum);
+    fprintf(file, "Saldo em Ripple: %.6f\n", usuario.saldoRipple);
+
+    fclose(file);  // Fecha o arquivo.
+}
+
+// Função para adicionar uma nova transação ao histórico de transações do usuário.
+// Recebe um ponteiro para o usuário e uma nova transação como parâmetros.
+void adicionarTransacao(Usuario *usuario, Transacao novaTransacao) {
+    // Verifica se o número de transações ainda está abaixo do limite permitido (MAX_TRANSACOES).
+    if (usuario->numTransacoes < MAX_TRANSACOES) {
+        // Adiciona a nova transação ao array de transações do usuário.
+        usuario->transacoes[usuario->numTransacoes] = novaTransacao;
+        usuario->numTransacoes++;  // Incrementa o número de transações.
+    } else {
+        // Se o limite foi atingido, exibe uma mensagem de erro.
+        printf("Limite de transações atingido!\n");
+    }
+}
+
+// Função para exibir o histórico de transações do usuário no console.
+// Recebe o usuário como parâmetro e imprime todas as suas transações.
+void consultarHistorico(Usuario usuario) {
+    printf("Histórico de Transações:\n");
+
+    // Percorre o array de transações do usuário e imprime cada uma.
+    for (int i = 0; i < usuario.numTransacoes; i++) {
+        printf("%s - %s: %.2f (Taxa: %.2f)\n",
+               usuario.transacoes[i].data,              // Data da transação.
+               usuario.transacoes[i].tipoOperacao,      // Tipo da operação.
+               usuario.transacoes[i].valor,             // Valor da transação.
+               usuario.transacoes[i].taxa);             // Taxa cobrada na transação.
+    }
+}
+
+// Função para obter a data e hora atuais no formato dd/mm/aaaa hh:mm:ss.
+// Recebe um ponteiro para uma string onde a data atual será armazenada.
+void obterDataAtual(char *data) {
+    time_t t = time(NULL);  // Obtém o tempo atual.
+    struct tm tm = *localtime(&t);  // Converte o tempo para uma estrutura que contém a data e hora.
+
+    // Formata a data no formato dd/mm/aaaa hh:mm:ss e armazena na string passada como parâmetro.
+    sprintf(data, "%02d/%02d/%04d %02d:%02d:%02d",
+            tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900,  // Dia, mês e ano.
+            tm.tm_hour, tm.tm_min, tm.tm_sec);             // Hora, minuto e segundo.
+}

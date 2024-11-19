@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -256,4 +257,3 @@ int main() {
     carregarDados();
     menuPrincipal();
     return 0;
-}

@@ -257,4 +257,3 @@ int main() {
     carregarDados();
     menuPrincipal();
     return 0;
-}

@@ -1,4 +1,5 @@
 # PROJ1
+#Para enttrar como administrador do banco a senha padrão é: admin123
 
 ```markdown
 # Exchange de Criptomoedas
